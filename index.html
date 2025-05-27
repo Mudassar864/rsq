@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RSQ NOW: Emergency Roadside Assistance</title>
   <link rel="stylesheet" href="rsqstyles.css" />
 </head>
-
 <body>
-
   <div id="desktopView">
     <div class="main-container">
       <div class="left-side"></div>
@@ -29,35 +26,32 @@
               </div>
             </div>
           </div>
-
-         <div class="main-content">
-           <div class="middle-section">
-            <div class="title-align">
-              <h1>RSQ NOW</h1>
+          <div class="main-content">
+            <div class="middle-section">
+              <div class="title-align">
+                <h1>RSQ NOW</h1>
+              </div>
+              <div class="subtitle-align">
+                <h2>Emergency Roadside Assistance</h2>
+              </div>
             </div>
-            <div class="subtitle-align">
-              <h2>Emergency Roadside Assistance</h2>
+            <div class="bottom-section">
+              <div class="bottom-left">
+                <img src="./logo.png" alt="RSQ NOW Logo" class="logo" />
+              </div>
+              <div class="bottom-right">
+                <p class="help-title">Need Help Now?</p>
+                <p class="phone">Call: (602) 513-0051</p>
+                <p class="or">OR</p>
+                <button class="cta-btn">Request Service</button>
+              </div>
             </div>
           </div>
-
-          <div class="bottom-section">
-            <div class="bottom-left">
-              <img src="./logo.png" alt="RSQ NOW Logo" class="logo" />
-            </div>
-            <div class="bottom-right">
-              <p class="help-title">Need Help Now?</p>
-              <p class="phone">Call: (602) 513-0051</p>
-              <p class="or">OR</p>
-              <button class="cta-btn">Request Service</button>
-            </div>
-          </div>
-         </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- [Rest of the HTML remains unchanged, including modals and JavaScript] -->
   <!-- Services Modal -->
   <div id="servicesModal" class="modal" style="display:none;">
     <div class="modal-content">
@@ -81,11 +75,11 @@
           <span style="color:#147ec5; font-weight:bold;">$100</span>
         </div>
         <div class="pricing-row">
-          <label><input type="checkbox" value="Tire Change" id="tireChangeCheckbox"> Tire Change</label>
+          <label><input type="checkbox" value="Tire Change" id="tireChangeCheckboxServices"> Tire Change</label>
           <span style="color:#147ec5; font-weight:bold;">$200</span>
         </div>
         <div class="pricing-row">
-          <label><input type="checkbox" value="Battery Replacement" id="batteryCheckbox"> Battery Replacement</label>
+          <label><input type="checkbox" value="Battery Replacement" id="batteryCheckboxServices"> Battery Replacement</label>
           <span style="color:#147ec5; font-weight:bold;">$375 (2 Yr Wty) / $425 (4 Yr Wty)</span>
         </div>
         <div class="continue-wrap">
@@ -105,7 +99,7 @@
     <div class="modal-content">
       <span class="close-btn" id="closeQuote">×</span>
       <h2 class="modal-title">Request Service</h2>
-      <p>Please provide your details and we’ll reach out.</p>
+      <p>Please provide your details and we'll reach out.</p>
       <form id="quoteForm" class="quote-form">
         <div class="row-3">
           <input type="text" id="firstName" placeholder="First Name" required />
@@ -140,33 +134,27 @@
             <input type="checkbox" value="Battery Replacement" id="batteryCheckbox" />
             <span class="battery-replacement-text">Battery Replacement</span>
           </label>
+          <label>
+            <input type="checkbox" value="Tire Change" id="tireChangeCheckbox" />
+            <span class="tire-text">Tire Change</span>
+          </label>
         </div>
-        <div class="multi-row-grid">
-          <div class="grid-section tire-change-section">
-            <label class="tire-label">
-              <input type="checkbox" id="tireChangeCheckbox" />
-              <span class="tire-text">Tire<br>Change</span>
-            </label>
+        <div class="grid-section spare-tire-section" id="spareTireSection" style="display: none;">
+          <span class="spare-tire-question">Do you have a usable spare tire?</span>
+          <div class="spare-tire-options">
+            <label class="spare-radio"><input type="radio" name="spareTire" value="Yes" /> Yes</label>
+            <label class="spare-radio"><input type="radio" name="spareTire" value="No" /> No</label>
+            <label class="spare-radio"><input type="radio" name="spareTire" value="Not Sure" /> Not Sure</label>
           </div>
-          <div class="grid-section spare-tire-section" id="spareTireSection" style="display: none;">
-            <span class="spare-tire-question">Do you have a usable spare tire?</span>
-            <div class="spare-tire-options">
-              <label class="spare-radio"><input type="radio" name="spareTire" value="Yes" /> Yes</label>
-              <label class="spare-radio"><input type="radio" name="spareTire" value="No" /> No</label>
-              <label class="spare-radio"><input type="radio" name="spareTire" value="Not Sure" /> Not Sure</label>
-            </div>
-            <span id="spareTireError" style="color: red; display: none; font-size: 0.95em;">Please select a spare tire
-              option.</span>
+          <span id="spareTireError" style="color: red; display: none; font-size: 0.95em;">Please select a spare tire option.</span>
+        </div>
+        <div class="grid-section battery-warranty-section" id="batteryWarrantySection" style="display: none;">
+          <span class="battery-choice-question">Which Warranty?</span>
+          <div class="battery-options-row">
+            <label class="spare-radio"><input type="radio" name="batteryChoice" value="2yr" /> 2 Yr</label>
+            <label class="spare-radio"><input type="radio" name="batteryChoice" value="4yr" /> 4 Yr</label>
           </div>
-          <div class="grid-section battery-warranty-section" id="batteryWarrantySection" style="display: none;">
-            <span class="battery-choice-question">Which Warranty?</span>
-            <div class="battery-options-row">
-              <label class="spare-radio"><input type="radio" name="batteryChoice" value="2yr" /> 2 Yr</label>
-              <label class="spare-radio"><input type="radio" name="batteryChoice" value="4yr" /> 4 Yr</label>
-            </div>
-            <span id="batteryWarrantyError" style="color: red; display: none; font-size: 0.95em;">Please select a
-              battery warranty.</span>
-          </div>
+          <span id="batteryWarrantyError" style="color: red; display: none; font-size: 0.95em;">Please select a battery warranty.</span>
         </div>
         <textarea id="comments" placeholder="Describe your issue... (optional)"></textarea>
         <button type="submit" class="cta-btn">Submit Request</button>
@@ -184,8 +172,7 @@
       <div style="text-align:center; margin-top: 1.5em;">
         <span style="font-size:1.08em;">Or save our number</span>
         <br>
-        <img src="./logo.png" alt="RSQ NOW QR Code"
-          style="margin:0.5em auto 0; display:block; width:120px; max-width:40vw;">
+        <img src="./logo.png" alt="RSQ NOW QR Code" style="margin:0.5em auto 0; display:block; width:120px; max-width:40vw;">
       </div>
     </div>
   </div>
@@ -195,51 +182,41 @@
     <div class="modal-content" style="max-width: 720px; width: 98%;">
       <span class="close-btn" id="closeAbout">×</span>
       <div style="display: flex; align-items: center; gap: 0; margin-bottom: 0.15em;">
-        <img src="./logo.png" alt="RSQ NOW Logo"
-          style="height: 52px; width: auto; border-radius:10px;">
+        <img src="./logo.png" alt="RSQ NOW Logo" style="height: 52px; width: auto; border-radius:10px;">
         <h2 class="modal-title" style="margin:0; padding: 0; margin-left: 5px;">About RSQ NOW</h2>
       </div>
       <div style="text-align:center; font-size:1.14em; font-weight:bold; margin-bottom:1em;">
         When you're stranded, it's not just about your car!<br>It's about your safety, your family, your peace of mind!
       </div>
       <div style="margin-bottom: 1em;">
-        <p>At RSQNOW, every call is personal. It’s not just a flat tire, a dead battery, or your keys locked in the car
-          — it’s the stress, the fear, and the feeling of being stuck with no one to turn to.</p>
-        <div style="font-weight: bold; color:#147ec5; margin-bottom:0.6em; margin-top:0.6em; font-size: 1.15em;">That’s
-          why we do things differently.</div>
+        <p>At RSQNOW, every call is personal. It's not just a flat tire, a dead battery, or your keys locked in the car — it's the stress, the fear, and the feeling of being stuck with no one to turn to.</p>
+        <div style="font-weight: bold; color:#147ec5; margin-bottom:0.6em; margin-top:0.6em; font-size: 1.15em;">That's why we do things differently.</div>
         <div style="margin-bottom: 0.7em;">
-          <em>We’re not a faceless dispatch center or a slow-moving tow truck service.<br>
-            RSQNOW was built to be the <strong>friend you can count on when things go wrong — and you need someone who
-              actually cares.</strong></em>
+          <em>We're not a faceless dispatch center or a slow-moving tow truck service.<br>
+            RSQNOW was built to be the <strong>friend you can count on when things go wrong — and you need someone who actually cares.</strong></em>
         </div>
         <hr style="margin: 0.6em 0 1.1em 0; border: none; border-top: 1.5px solid #e7e7e7;">
         <div style="margin-bottom: .7em; font-weight:bold;">What Sets Us Apart:</div>
         <ul style="margin:0 0 0.6em 0.7em; padding-left:1.3em;">
           <li style="margin-bottom:0.5em;">
-            <strong>Fast, Reliable Response</strong> – When you call, we don’t waste time. We get to you as quickly as
-            possible, with clear communication every step of the way.
+            <strong>Fast, Reliable Response</strong> – When you call, we don't waste time. We get to you as quickly as possible, with clear communication every step of the way.
           </li>
           <li style="margin-bottom:0.5em;">
-            <strong>Real People Who Care</strong> – You’ll never get stuck in a phone tree or with a voicemail. You’ll
-            talk to someone who gets it — and treats your emergency like it matters.
+            <strong>Real People Who Care</strong> – You'll never get stuck in a phone tree or with a voicemail. You'll talk to someone who gets it — and treats your emergency like it matters.
           </li>
           <li style="margin-bottom:0.5em;">
-            <strong>Locally Based, Community Driven</strong> – We know these streets because we live here too. We're
-            proud to serve our neighbors with respect and integrity.
+            <strong>Locally Based, Community Driven</strong> – We know these streets because we live here too. We're proud to serve our neighbors with respect and integrity.
           </li>
           <li style="margin-bottom:1em;">
-            <strong>More Than Just a Service</strong> – We don’t just unlock doors or change tires. We show up with a
-            calm presence, a helping hand, and care that makes a tough moment easier.
+            <strong>More Than Just a Service</strong> – We don't just unlock doors or change tires. We show up with a calm presence, a helping hand, and care that makes a tough moment easier.
           </li>
         </ul>
         <div style="margin-bottom:0.7em;">
-          At RSQNOW, we don’t just rescue vehicles — we rescue people. Behind every call is someone counting on us to
-          show up with compassion, skill, and urgency.
+          At RSQNOW, we don't just rescue vehicles — we rescue people. Behind every call is someone counting on us to show up with compassion, skill, and urgency.
         </div>
         <div style="margin:0.7em 0 0 0;">
           <div style="font-weight: bold; font-size: 1.15em; color: #147ec5; text-align:center;">
-            Because when it matters most, you need more than help. <br><span style="font-weight:900;">You need
-              RSQ.</span>
+            Because when it matters most, you need more than help. <br><span style="font-weight:900;">You need RSQ.</span>
           </div>
         </div>
         <div style="text-align:center; margin: 1em 0 0 0;">
@@ -254,17 +231,14 @@
     <div class="modal-content" style="max-width: 700px; width: 98%; min-width:320px;">
       <span class="close-btn" id="closeContact" style="z-index: 1;">×</span>
       <div style="display: flex; gap: 1.8em; align-items: stretch; flex-wrap: wrap;">
-        <!-- Left Side: Quick Actions -->
         <div style="flex:0 0 220px; min-width:180px; padding: 0.6em 0;">
           <h2 style="color:#147ec5; font-size:1.45em; margin-top:0; margin-bottom:1em;">Contact Us</h2>
           <div style="margin-bottom:1.1em;">
             <button style="width:100%; margin-bottom:0.5em;" class="cta-btn" disabled>
               Call Us:<br>(602) 513-0051
             </button>
-            <button id="emailUsBtn" style="width:100%; margin-bottom:0.5em;" class="cta-btn">Email
-              Us:<br>help@rsqnow.com</button>
-            <button id="openServiceFromContact" style="width:100%; margin-bottom:0.5em;" class="cta-btn">Begin a
-              New<br>Service Request</button>
+            <button id="emailUsBtn" style="width:100%; margin-bottom:0.5em;" class="cta-btn">Email Us:<br>help@rsqnow.com</button>
+            <button id="openServiceFromContact" style="width:100%; margin-bottom:0.5em;" class="cta-btn">Begin a New<br>Service Request</button>
           </div>
           <hr style="margin:1.1em 0;">
           <div style="text-align:center; color:#888; font-size:0.98em;">
@@ -273,34 +247,28 @@
               Or save our number:
             </span>
             <div style="display:flex; justify-content:center; margin-top:0.5em;">
-              <img src="./logo.png" alt="Save RSQ NOW Contact"
-                style="width:92px; border-radius:12px; border:1px solid #eee;">
+              <img src="./logo.png" alt="Save RSQ NOW Contact" style="width:92px; border-radius:12px; border:1px solid #eee;">
             </div>
           </div>
         </div>
-        <!-- Right Side: Form -->
         <div style="flex:1; min-width:220px; border-left:1.5px solid #eee; padding-left:1.8em;">
           <div style="margin-bottom:0.6em; color:#888; font-size:1em;">Or send us a general inquiry:</div>
           <form id="contactForm" autocomplete="off">
             <div style="margin-bottom: 1em;">
               <label for="contactName" style="font-weight: 600;">Name*</label>
-              <input type="text" id="contactName" name="contactName" required
-                style="width: 100%; padding: 0.7em; border-radius: 0.5em; border: 1px solid #ccc; margin-top: 0.4em;">
+              <input type="text" id="contactName" name="contactName" required style="width: 100%; padding: 0.7em; border-radius: 0.5em; border: 1px solid #ccc; margin-top: 0.4em;">
             </div>
             <div style="margin-bottom: 1em;">
               <label for="contactEmail" style="font-weight: 600;">Email*</label>
-              <input type="email" id="contactEmail" name="contactEmail" required
-                style="width: 100%; padding: 0.7em; border-radius: 0.5em; border: 1px solid #ccc; margin-top: 0.4em;">
+              <input type="email" id="contactEmail" name="contactEmail" required style="width: 100%; padding: 0.7em; border-radius: 0.5em; border: 1px solid #ccc; margin-top: 0.4em;">
             </div>
             <div style="margin-bottom: 1em;">
               <label for="contactPhone" style="font-weight: 600;">Phone*</label>
-              <input type="tel" id="contactPhone" name="contactPhone" required
-                style="width: 100%; padding: 0.7em; border-radius: 0.5em; border: 1px solid #ccc; margin-top: 0.4em;">
+              <input type="tel" id="contactPhone" name="contactPhone" required style="width: 100%; padding: 0.7em; border-radius: 0.5em; border: 1px solid #ccc; margin-top: 0.4em;">
             </div>
             <div style="margin-bottom: 1.2em;">
               <label for="contactMessage" style="font-weight: 600;">Message*</label>
-              <textarea id="contactMessage" name="contactMessage" required
-                style="width: 100%; min-height: 88px; padding: 0.7em; border-radius: 0.5em; border: 1px solid #ccc; margin-top: 0.4em;"></textarea>
+              <textarea id="contactMessage" name="contactMessage" required style="width: 100%; min-height: 88px; padding: 0.7em; border-radius: 0.5em; border: 1px solid #ccc; margin-top: 0.4em;"></textarea>
             </div>
             <button type="submit" class="cta-btn" style="width: 100%;">Send Message</button>
           </form>
@@ -321,39 +289,39 @@
   </div>
 
   <script>
-    window.addEventListener("DOMContentLoaded", function () {
-
+    window.addEventListener("DOMContentLoaded", () => {
       let confirmSource = "";
 
       // ---- Modal Open/Close Helpers ----
-      function openModal(id) {
+      const openModal = id => {
         const modal = document.getElementById(id);
         if (modal) modal.style.display = "flex";
-      }
-      function closeModal(id) {
+      };
+
+      const closeModal = id => {
         const modal = document.getElementById(id);
         if (modal) modal.style.display = "none";
-      }
+      };
 
       // ---- Hamburger Menu Toggle ----
       const hamburgerBtn = document.getElementById("hamburgerBtn");
       const navMenu = document.getElementById("navMenu");
       if (hamburgerBtn && navMenu) {
-        hamburgerBtn.addEventListener("click", function () {
+        hamburgerBtn.addEventListener("click", () => {
           navMenu.classList.toggle("active");
           hamburgerBtn.classList.toggle("open");
         });
 
         // Close menu when a nav link is clicked
         document.querySelectorAll(".nav-btn").forEach(btn => {
-          btn.addEventListener("click", function () {
+          btn.addEventListener("click", () => {
             navMenu.classList.remove("active");
             hamburgerBtn.classList.remove("open");
           });
         });
 
         // Close menu when clicking outside
-        document.addEventListener("click", function (e) {
+        document.addEventListener("click", e => {
           if (!navMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
             navMenu.classList.remove("active");
             hamburgerBtn.classList.remove("open");
@@ -364,46 +332,29 @@
       // ---- Auto-open Services Modal ----
       setTimeout(() => openModal("servicesModal"), 500);
 
-      // ==== BUTTON AND NAV LOGIC ====
+      // ---- Button and Navigation Logic ----
+      // Services Nav Button
+      document.getElementById("servicesBtn")?.addEventListener("click", () => openModal("servicesModal"));
 
-      // "Services" Nav Button
-      const servicesBtn = document.getElementById("servicesBtn");
-      if (servicesBtn) servicesBtn.onclick = () => openModal("servicesModal");
+      // About Us Nav Button
+      document.querySelectorAll(".nav-btn")[1]?.addEventListener("click", () => openModal("aboutModal"));
 
-      // "About Us" Nav Button (second nav-btn)
-      const aboutNavBtn = document.querySelectorAll(".nav-btn")[1];
-      if (aboutNavBtn) aboutNavBtn.onclick = () => openModal("aboutModal");
+      // Contact Nav Button
+      document.querySelectorAll(".nav-btn")[2]?.addEventListener("click", () => openModal("contactModal"));
 
-      // "Contact" Nav Button (third nav-btn)
-      const contactNavBtn = document.querySelectorAll(".nav-btn")[2];
-      if (contactNavBtn) contactNavBtn.onclick = () => openModal("contactModal");
+      // Request Service Button (bottom right)
+      document.querySelector(".bottom-right .cta-btn")?.addEventListener("click", () => openModal("servicesModal"));
 
-      // "Request Service" Button (bottom right)
-      const mainCtaBtn = document.querySelector(".bottom-right .cta-btn");
-      if (mainCtaBtn) mainCtaBtn.onclick = () => openModal("servicesModal");
+      // ---- Modal Close Buttons ----
+      document.getElementById("closeServices")?.addEventListener("click", () => closeModal("servicesModal"));
+      document.getElementById("closeQuote")?.addEventListener("click", () => closeModal("quoteModal"));
+      document.getElementById("closeCallModal")?.addEventListener("click", () => closeModal("callModal"));
+      document.getElementById("closeAbout")?.addEventListener("click", () => closeModal("aboutModal"));
+      document.getElementById("closeContact")?.addEventListener("click", () => closeModal("contactModal"));
 
-      // ==== MODAL CLOSE BUTTONS ====
-
-      const closeServices = document.getElementById("closeServices");
-      if (closeServices) closeServices.onclick = () => closeModal("servicesModal");
-
-      const closeQuote = document.getElementById("closeQuote");
-      if (closeQuote) closeQuote.onclick = () => closeModal("quoteModal");
-
-      const closeCallModal = document.getElementById("closeCallModal");
-      if (closeCallModal) closeCallModal.onclick = () => closeModal("callModal");
-
-      const closeAbout = document.getElementById("closeAbout");
-      if (closeAbout) closeAbout.onclick = () => closeModal("aboutModal");
-
-      const closeContact = document.getElementById("closeContact");
-      if (closeContact) closeContact.onclick = () => closeModal("contactModal");
-
-      // ==== SERVICES MODAL LOGIC ====
-
+      // ---- Services Modal Logic ----
       // Continue Button in Services Modal
-      const continueService = document.getElementById("continueService");
-      if (continueService) continueService.onclick = () => {
+      document.getElementById("continueService")?.addEventListener("click", () => {
         const checked = document.querySelectorAll('#servicesModal input[type="checkbox"]:checked');
         const serviceError = document.getElementById("serviceError");
         if (checked.length === 0) {
@@ -412,159 +363,142 @@
           if (serviceError) serviceError.style.display = "none";
           closeModal("servicesModal");
           openModal("quoteModal");
-          // Sync selected services into quote modal checkboxes
+          // Sync selected services to Quote Modal
           const serviceNames = Array.from(checked).map(i => i.value);
           document.querySelectorAll('#quoteModal .checkbox-group input[type="checkbox"]').forEach(box => {
             box.checked = serviceNames.includes(box.value);
           });
-          // Tire/Battery logic for quote form
+          // Show/hide Tire and Battery sections based on selections
           const tireCheckbox = document.getElementById("tireChangeCheckbox");
           const spareTireSection = document.getElementById("spareTireSection");
-          if (tireCheckbox && spareTireSection)
+          if (tireCheckbox && spareTireSection) {
             spareTireSection.style.display = serviceNames.includes("Tire Change") ? "block" : "none";
+          }
           const batteryCheckbox = document.getElementById("batteryCheckbox");
           const batteryWarrantySection = document.getElementById("batteryWarrantySection");
-          if (batteryCheckbox && batteryWarrantySection)
+          if (batteryCheckbox && batteryWarrantySection) {
             batteryWarrantySection.style.display = serviceNames.includes("Battery Replacement") ? "block" : "none";
+          }
         }
-      };
+      });
 
-      // "Call Now" button in Services Modal
-      const callNow = document.getElementById("callNow");
-      if (callNow) callNow.onclick = () => openModal("callModal");
+      // Call Now Button in Services Modal
+      document.getElementById("callNow")?.addEventListener("click", () => openModal("callModal"));
 
-      // ==== QUOTE MODAL LOGIC ====
-
-      // Tire Change: show/hide extra question
+      // ---- Quote Modal Logic ----
+      // Tire Change: Show/hide spare tire question
       const tireChangeCheckbox = document.getElementById("tireChangeCheckbox");
       const spareTireSection = document.getElementById("spareTireSection");
       if (tireChangeCheckbox && spareTireSection) {
-        tireChangeCheckbox.onchange = function () {
-          spareTireSection.style.display = this.checked ? "block" : "none";
-        };
+        tireChangeCheckbox.addEventListener("change", () => {
+          spareTireSection.style.display = tireChangeCheckbox.checked ? "block" : "none";
+        });
       }
 
-      // Battery Replacement: show/hide warranty choice
+      // Battery Replacement: Show/hide warranty options
       const batteryCheckbox = document.getElementById("batteryCheckbox");
       const batteryWarrantySection = document.getElementById("batteryWarrantySection");
       if (batteryCheckbox && batteryWarrantySection) {
-        batteryCheckbox.onchange = function () {
-          batteryWarrantySection.style.display = this.checked ? "block" : "none";
-        };
+        batteryCheckbox.addEventListener("change", () => {
+          batteryWarrantySection.style.display = batteryCheckbox.checked ? "block" : "none";
+        });
       }
 
-      // Handle Quote Form Submission
-      const quoteForm = document.getElementById("quoteForm");
-      if (quoteForm) quoteForm.onsubmit = function (e) {
+      // Quote Form Submission
+      document.getElementById("quoteForm")?.addEventListener("submit", e => {
         e.preventDefault();
-        // Validation for tire/battery
         let valid = true;
-        if (tireChangeCheckbox && tireChangeCheckbox.checked) {
-          if (!document.querySelector('input[name="spareTire"]:checked')) {
-            const spareTireError = document.getElementById("spareTireError");
-            if (spareTireError) spareTireError.style.display = "inline";
-            valid = false;
-          } else {
-            const spareTireError = document.getElementById("spareTireError");
-            if (spareTireError) spareTireError.style.display = "none";
-          }
+        // Validate Tire Change
+        if (tireChangeCheckbox?.checked && !document.querySelector('input[name="spareTire"]:checked')) {
+          document.getElementById("spareTireError").style.display = "inline";
+          valid = false;
+        } else {
+          document.getElementById("spareTireError").style.display = "none";
         }
-        if (batteryCheckbox && batteryCheckbox.checked) {
-          if (!document.querySelector('input[name="batteryChoice"]:checked')) {
-            const batteryWarrantyError = document.getElementById("batteryWarrantyError");
-            if (batteryWarrantyError) batteryWarrantyError.style.display = "inline";
-            valid = false;
-          } else {
-            const batteryWarrantyError = document.getElementById("batteryWarrantyError");
-            if (batteryWarrantyError) batteryWarrantyError.style.display = "none";
-          }
+        // Validate Battery Replacement
+        if (batteryCheckbox?.checked && !document.querySelector('input[name="batteryChoice"]:checked')) {
+          document.getElementById("batteryWarrantyError").style.display = "inline";
+          valid = false;
+        } else {
+          document.getElementById("batteryWarrantyError").style.display = "none";
         }
         if (!valid) return;
         closeModal("quoteModal");
         openModal("customConfirm");
         confirmSource = "service";
         document.getElementById("confirmMsg").innerHTML = `
-      <strong>Thank you!</strong><br>
-      We’ll reach out soon.<br>
-      If you need a RSQ NOW<br>
-      <span style="color:#147ec5; font-size:1.18em;">
-        Call: (602) 513-0051.
-      </span>
-      <br>
-      <span style="display:inline-block; margin:0.5em 0 0.2em 0;">Or save our number</span>
-      <br>
-      <img src="./logo.png" alt="Save RSQ NOW Contact" style="width:90px; display:block; margin:0.5em auto;">
-    `;
-        this.reset();
+          <strong>Thank you!</strong><br>
+          We'll reach out soon.<br>
+          If you need a RSQ NOW<br>
+          <span style="color:#147ec5; font-size:1.18em;">
+            Call: (602) 513-0051.
+          </span>
+          <br>
+          <span style="display:inline-block; margin:0.5em 0 0.2em 0;">Or save our number</span>
+          <br>
+          <img src="./logo.png" alt="Save RSQ NOW Contact" style="width:90px; display:block; margin:0.5em auto;">
+        `;
+        document.getElementById("quoteForm").reset();
         if (spareTireSection) spareTireSection.style.display = "none";
         if (batteryWarrantySection) batteryWarrantySection.style.display = "none";
-      };
+      });
 
-      // ==== ABOUT MODAL LOGIC ====
-      const startServiceFromAbout = document.getElementById("startServiceFromAbout");
-      if (startServiceFromAbout) startServiceFromAbout.onclick = () => {
+      // ---- About Modal Logic ----
+      document.getElementById("startServiceFromAbout")?.addEventListener("click", () => {
         closeModal("aboutModal");
         openModal("servicesModal");
-      };
+      });
 
-      // ==== CONTACT MODAL LOGIC ====
-      const openServiceFromContact = document.getElementById("openServiceFromContact");
-      if (openServiceFromContact) openServiceFromContact.onclick = () => {
+      // ---- Contact Modal Logic ----
+      document.getElementById("openServiceFromContact")?.addEventListener("click", () => {
         closeModal("contactModal");
         openModal("servicesModal");
-      };
+      });
 
-      const contactForm = document.getElementById("contactForm");
-      if (contactForm) contactForm.onsubmit = function (e) {
+      document.getElementById("contactForm")?.addEventListener("submit", e => {
         e.preventDefault();
         closeModal("contactModal");
         openModal("customConfirm");
         confirmSource = "contact";
         document.getElementById("confirmMsg").innerHTML = `
-      <strong>Thank you!</strong><br>
-      We’ll reach out soon.<br>
-      If you need a RSQ NOW<br>
-      <span style="color:#147ec5;">Call: (602) 513-0051.</span>
-      <br><br>
-      Or save our number<br>
-      <img src="./logo.png" alt="RSQ NOW QR Code" style="margin:0.5em auto 0; display:block; width:120px; max-width:40vw;">
-    `;
-        this.reset();
-      };
+          <strong>Thank you!</strong><br>
+          We'll reach out soon.<br>
+          If you need a RSQ NOW<br>
+          <span style="color:#147ec5;">Call: (602) 513-0051.</span>
+          <br><br>
+          Or save our number<br>
+          <img src="./logo.png" alt="RSQ NOW QR Code" style="margin:0.5em auto 0; display:block; width:120px; max-width:40vw;">
+        `;
+        document.getElementById("contactForm").reset();
+      });
 
-      // ==== CONFIRMATION MODAL ====
-      const confirmBtn = document.querySelector(".custom-confirm-btn");
-      if (confirmBtn) confirmBtn.onclick = () => {
+      // ---- Confirmation Modal ----
+      document.querySelector(".custom-confirm-btn")?.addEventListener("click", () => {
         closeModal("customConfirm");
         openModal("aboutModal");
         confirmSource = "";
-      };
+      });
 
-      // ==== OUTSIDE CLICK CLOSES MODALS ====
+      // ---- Email Us Button ----
+      document.getElementById("emailUsBtn")?.addEventListener("click", () => {
+        window.open("mailto:help@rsqnow.com");
+      });
+
+      // ---- Close Modals on Outside Click ----
       document.querySelectorAll(".modal").forEach(modal => {
-        modal.addEventListener("mousedown", function (e) {
-          if (e.target === this) this.style.display = "none";
+        modal.addEventListener("mousedown", e => {
+          if (e.target === modal) modal.style.display = "none";
         });
       });
 
-      // ==== All close-btns close their parent modal ====
-      document.querySelectorAll('.close-btn').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var modal = btn.closest('.modal');
+      // ---- Close Buttons for All Modals ----
+      document.querySelectorAll(".close-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const modal = btn.closest(".modal");
           if (modal) modal.style.display = "none";
         });
       });
-
     });
-
-    const emailUsBtn = document.getElementById("emailUsBtn");
-    if (emailUsBtn) {
-      emailUsBtn.addEventListener("click", function () {
-        window.open("mailto:help@rsqnow.com");
-      });
-    }
   </script>
-
 </body>
-
 </html>

@@ -423,11 +423,23 @@ input[type="radio"],input[type="checkbox"] {
   flex: 1;
   min-width: 120px;
 }
-
-.radio-group,
+.radio-group{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+.radio-group label {
+  max-width: fit-content;
+  font-weight: 400;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 .checkbox-group {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 0.6rem;
   margin-bottom: 0.8rem;
 }
@@ -767,9 +779,7 @@ input[type="radio"],input[type="checkbox"] {
     min-width: 100%;
   }
 
-  .radio-group,
   .checkbox-group {
-    flex-direction: column;
     gap: 0.5rem;
   }
 
